@@ -8,7 +8,7 @@ description: |
 tags:
   - NextJS
   - Apollo GraphQL
-  - TypeORM
+  - PrismaORM
   - Typescript
 ---
 
