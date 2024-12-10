@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Paige Willey" description="About Paige Willey">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+			>
+				
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						I like to solve puzzles. And all of life is a puzzle to me.
+					</p>
+					<p>
+						Fresh out of college, I solved marketing puzzles. These turned into more technical puzzles. And before I knew it, my tool of choice became code.
+						I'm always itching to fix just one more thing, one more bug, one more pixel.
+					</p>
+					<p>
+						I started my career as a sub-contractor for companies like Netflix, Facebook, and Vivint before I moved to my current gig at Remote.com in 2022.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Outside the 9-5</h2>
+				<div class="content">
+					<p>
+						You'll find me in the mountains, teaching a yoga class, or rowing on the Great Salt Lake.
+					</p>
+				</div>
+			</section>
+		
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
